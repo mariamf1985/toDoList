@@ -43,22 +43,32 @@ include("Connection.php");
             <ul class="list-group">
 
 
-<?php 
+                <?php
 
-foreach($records as $record){ ?>
+                foreach ($records as $record) { ?>
 
-<li class="list-group-item">
-                    <div class="form-check">
+                    <li class="list-group-item">
+                        
+<form action="" method="post">
+<input type="hidden" name="id_task" value="<?php echo $record['id_task']; ?>">
+<input class="form-check-input float-start" type="checkbox" name="completed" value="<?php echo $record['completed']; ?>" id="" onchange="this.form.submit();"
+<?php echo ($record['completed'] == 1) ? 'checked' : ''; ?> 
+/>
+</form>
 
-                        <input class="form-check-input float-start" type="checkbox" value="" id="" <?php echo ($record['completed'] == 1)?'checked':''; ?> />
-            
-                       &nbsp; <span class="float-start <?php echo ($record['completed'] == 1)?'underlined':''; ?> ">&nbsp; <?php echo $record['task'];?></span>
-                    <h6 class="float-start">
-                    &nbsp; <a href="?id_task=<?php echo $record['id_task'];?>"><span class="badge bg-danger">x</span></a>
-                    </h6> 
-                </li>
 
-<?php } ?>
+
+                        <div class="form-check">
+
+                            
+
+                            &nbsp; <span class="float-start <?php echo ($record['completed'] == 1) ? 'underlined' : ''; ?> ">&nbsp; <?php echo $record['task']; ?></span>
+                            <h6 class="float-start">
+                                &nbsp; <a href="?id_task=<?php echo $record['id_task']; ?>"><span class="badge bg-danger">x</span></a>
+                            </h6>
+                    </li>
+
+                <?php } ?>
 
             </ul>
 

@@ -6,6 +6,16 @@ $conn = new PDO('mysql:host=localhost;dbname=todolist','root','');
 echo "Connection error:";
 }
 
+if(isset($_POST['id_task'])){
+
+$id_task = $_POST['id_task'];
+$completed = (isset($_POST['completed']))?1:0;
+
+$sql = "UPDATE tasks SET completed=? WHERE id_task=?";
+$statement = $conn -> prepare($sql);
+$statement -> execute([$completed,$id_task]);
+
+}
 
 if(isset($_POST['addTask'])){
 
