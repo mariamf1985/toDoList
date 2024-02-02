@@ -51,7 +51,7 @@ foreach($records as $record){ ?>
                         <input class="form-check-input float-start" type="checkbox" value="" id="" checked />
                        &nbsp; <span class="float-start">&nbsp; <?php echo $record['task'];?></span>
                     <h6 class="float-start">
-                    &nbsp;<span class="badge bg-danger">x</span>
+                    &nbsp; <a href="?id_task=<?php echo $record['id_task'];?>"><span class="badge bg-danger">x</span></a>
                     </h6> 
                 </li>
 

@@ -16,6 +16,14 @@ if(isset($_POST['addTask'])){
 
 }
 
+if(isset($_GET['id_task'])){
+
+$id_task = $_GET['id_task'];
+$sql = "DELETE FROM tasks WHERE id_task=?";
+$statement = $conn -> prepare($sql);
+$statement -> execute([$id_task]);
+
+}
 
 
 $sql = "SELECT * FROM tasks";
