@@ -39,28 +39,23 @@ include("Connection.php");
             </div>
 
             <ul class="list-group">
-                <li class="list-group-item">
+
+
+<?php 
+
+foreach($records as $record){ ?>
+
+<li class="list-group-item">
                     <div class="form-check">
 
                         <input class="form-check-input float-start" type="checkbox" value="" id="" checked />
-                       &nbsp;<span class="float-start">Task 1</span>
+                       &nbsp; <span class="float-start">&nbsp; <?php echo $record['task'];?></span>
                     <h6 class="float-start">
                     &nbsp;<span class="badge bg-danger">x</span>
                     </h6> 
                 </li>
 
-                <li class="list-group-item">
-                    <div class="form-check">
-
-                        <input class="form-check-input" type="checkbox" value="" id="" checked />
-                        Task 2
-                </li>
-                <li class="list-group-item">
-                    <div class="form-check">
-
-                        <input class="form-check-input" type="checkbox" value="" id="" checked />
-                        Task 3
-                </li>
+<?php } ?>
 
             </ul>
 
