@@ -12,6 +12,8 @@ include("Connection.php");
 
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 
 <body>
@@ -48,8 +50,9 @@ foreach($records as $record){ ?>
 <li class="list-group-item">
                     <div class="form-check">
 
-                        <input class="form-check-input float-start" type="checkbox" value="" id="" checked />
-                       &nbsp; <span class="float-start">&nbsp; <?php echo $record['task'];?></span>
+                        <input class="form-check-input float-start" type="checkbox" value="" id="" <?php echo ($record['completed'] == 1)?'checked':''; ?> />
+            
+                       &nbsp; <span class="float-start <?php echo ($record['completed'] == 1)?'underlined':''; ?> ">&nbsp; <?php echo $record['task'];?></span>
                     <h6 class="float-start">
                     &nbsp; <a href="?id_task=<?php echo $record['id_task'];?>"><span class="badge bg-danger">x</span></a>
                     </h6> 
