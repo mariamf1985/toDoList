@@ -17,69 +17,50 @@ include("Connection.php");
 </head>
 
 <body>
-    <header>
-        <!-- place navbar here -->
-    </header>
-    <main class="container">
-        </br>
+    
+    <main class="container mt-5 mx-auto w-50">
+
         <div class="card">
             <div class="card-header">To Do list</div>
             <div class="card-body">
 
-
                 <div class="mb-3">
                     <form action="" method="post">
                         <label for="tarea" class="form-label">Task:</label>
-                        <input type="text" class="form-control" name="task" id="task" aria-describedby="helpId" placeholder="Write here your task" />
+                        <input type="text" class="form-control" name="task" id="task" aria-describedby="helpId" placeholder="Write your task here" />
                         </br>
-                        <input name="addTask" id="addTask" class="btn btn-primary" type="submit" value="Add Task" />
-
+                        <input name="addTask" id="addTask" class="btn btn-secondary" type="submit" value="Add Task" />
+                    </form>
                 </div>
-
-
-                </form>
+                
             </div>
 
-            <ul class="list-group">
-
-
+            <ul class="list-group mt">
                 <?php
-
                 foreach ($records as $record) { ?>
 
                     <li class="list-group-item">
-                        
-<form action="" method="post">
-<input type="hidden" name="id_task" value="<?php echo $record['id_task']; ?>">
-<input class="form-check-input float-start" type="checkbox" name="completed" value="<?php echo $record['completed']; ?>" id="" onchange="this.form.submit();"
-<?php echo ($record['completed'] == 1) ? 'checked' : ''; ?> 
-/>
-</form>
 
-
+                        <form action="" method="post">
+                            <input type="hidden" name="id_task" value="<?php echo $record['id_task']; ?>">
+                            <input class="form-check-input float-start" type="checkbox" name="completed" value="<?php echo $record['completed']; ?>" id="" onchange="this.form.submit();" <?php echo ($record['completed'] == 1) ? 'checked' : ''; ?> />
+                        </form>
 
                         <div class="form-check">
 
-                            
-
                             &nbsp; <span class="float-start <?php echo ($record['completed'] == 1) ? 'underlined' : ''; ?> ">&nbsp; <?php echo $record['task']; ?></span>
                             <h6 class="float-start">
-                                &nbsp; <a href="?id_task=<?php echo $record['id_task']; ?>"><span class="badge bg-danger">x</span></a>
+                            &nbsp; <a href="?id_task=<?php echo $record['id_task']; ?>"><span class="badge bg-danger">X</span></a>
                             </h6>
                     </li>
-
                 <?php } ?>
-
             </ul>
 
-
-            <div class="card-footer text-muted"></div>
+            <div class="card-footer"></div>
         </div>
 
     </main>
-    <footer>
-        <!-- place footer here -->
-    </footer>
+    
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 
