@@ -1,0 +1,16 @@
+{
+    "name": "maria/to-do-list",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Maria\\ToDoList\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "mariamf1985",
+            "email": "mariamf1985@gmail.com"
+        }
+    ],
+    "require": {}
+}
